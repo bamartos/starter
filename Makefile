@@ -22,7 +22,7 @@
 #=============================================================================
 # MAKE_ENV is the path to find common environment to buil project
 #
-MAKE_ENV = /segfs/tango/cppserver/env
+MAKE_ENV = /usr/share/pogo/preferences/
 
 #=============================================================================
 # PACKAGE_NAME is the name of the library/device/exe you want to build
@@ -66,7 +66,7 @@ OUTPUT_DIR = ./bin/$(BIN_DIR)
 #   - '-I ../include' and '-I .' are automatically appended in all cases
 #
 #
-INC_DIR_USER= -I . 
+INC_DIR_USER= -I .
 
 #=============================================================================
 # LFLAGS_USR is the list of user link flags
@@ -74,7 +74,7 @@ INC_DIR_USER= -I .
 #   - '-ldl -lpthread' is automatically appended in all cases
 #
 # !!! ATTENTION !!!
-# Be aware that the order matters. 
+# Be aware that the order matters.
 # For example if you must link with libA, and if libA depends itself on libB
 # you must use '-lA -lB' in this order as link flags, otherwise you will get
 # 'undefined reference' errors
@@ -92,12 +92,12 @@ CXXFLAGS_USR+= -Wall -Wextra -D_FORTIFY_SOURCE=2 -O1 -fpie -fstack-protector
 
 
 #=============================================================================
-# TANGO_REQUIRED 
+# TANGO_REQUIRED
 # - TRUE  : your project depends on TANGO
 # - FALSE : your project does not depend on TANGO
 #-----------------------------------------------------------------------------
 # - NOTE : if PROJECT_TYPE is set to DEVICE, TANGO will be auto. added
-#-----------------------------------------------------------------------------  
+#-----------------------------------------------------------------------------
 TANGO_REQUIRED = TRUE
 
 
@@ -128,7 +128,7 @@ SVC_OBJS =      \
 			$(OBJDIR)/PingThread.o \
 			$(OBJDIR)/StartProcessThread.o \
 			$(OBJDIR)/ClassFactory.o  \
-            $(OBJDIR)/main.o 
+            $(OBJDIR)/main.o
 
 #=============================================================================
 #	include common targets
