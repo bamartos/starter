@@ -230,7 +230,7 @@ void StartProcessThread::start_process(NewProcess *process)
 #endif
 				// Close standard out
 				close(1);
-                open("/dev/null", O_RDWR | O_CREAT, 0664);
+                open(process->logfile, O_RDWR | O_CREAT, 0664);
 
 				//	Close the stderr and re-open it on a log file.
                 close(2);
